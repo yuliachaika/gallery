@@ -52,7 +52,7 @@ gulp.task('javascript', function (cb) {
             gulp.src([
                 'assets/components/jquery/dist/jquery.js',
                 'assets/src/javascript/plugins/*.js',
-                'assets/src/javascript/scripts.js'])
+                'assets/src/javascript/global.js'])
             .pipe(concat('global.js')),
             // uglify(), 
             gulp.dest('assets/dist/javascript')

@@ -3,13 +3,13 @@
 }
 
 html {
-  font-size: rem-calc(16);
-  @include breakpoint(medium only) {
-    font-size: 90%;
-  }
-  @include breakpoint(small only) {
-    font-size: 80%;
-  }
+	font-size: rem-calc(16);
+	@include breakpoint(medium only) {
+		font-size: 90%;
+	}
+	@include breakpoint(small only) {
+		font-size: 80%;
+	}
 }
 
 body {
@@ -19,13 +19,13 @@ body {
 
 a, button, input, textarea  {
 	cursor: pointer;
-  transition:
-  border-color .4s ease-in,
-  color .4s ease-in,
-  background-color .4s ease-in;
-  &:focus {
-    outline: none; 
-  }
+	transition:
+	border-color .4s ease-in,
+	color .4s ease-in,
+	background-color .4s ease-in;
+	&:focus {
+		outline: none; 
+	}
 }
 a {
 	text-decoration: none;
@@ -39,26 +39,22 @@ img {
 	width: 100%;
 	height: 100%;
 	overflow: hidden; 
-	 
+	
 }
 
 .container {
-	// border: 1px solid green;
 	max-width: rem-calc(1170);
-	padding: 0 rem-calc(15); 
+	padding: 0 rem-calc(15);
 	margin: 0 auto;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap; 
+	@include row();
 	justify-content: center;
 }
 
 .content {
-	  // position: relative;
-    min-height: 100vh;
-    background: url(../img/bg-01.jpg) center no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+	min-height: 100vh;
+	background: url(../img/bg-01.jpg) center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 
