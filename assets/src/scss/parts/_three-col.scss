@@ -1,10 +1,8 @@
 .three-col {
   // border: 1px solid;
   @include column(); 
-  // min-height: 100vh; 
   @include breakpoint(medium up) {
     margin-bottom: rem-calc(300); 
-    
   }
   background: linear-gradient(to right, #444446, rgba(125, 185, 232, 0));
   &__row {
@@ -23,15 +21,18 @@
   &__title {
     width: 100%; 
     position: sticky;
-    top: rem-calc(130);
+    top: rem-calc(50);
+    @include breakpoint(medium up) {
+      top: rem-calc(130);
+    } 
     overflow: hidden;
     z-index: 20;
   }
   &__link {
     // border: 2px solid #fff;
     padding: rem-calc(10);
-    min-height: rem-calc(118); 
     @include breakpoint(medium up) {
+      @include col();
       padding: rem-calc(30);
       min-height: rem-calc(132);  
     } 
@@ -41,6 +42,7 @@
     align-items: center;
     background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0.5));
     @include link(28);
+    text-align: center;
     transition: all .4s ease-out;
     position: relative;
     &:focus {
@@ -123,12 +125,18 @@
     @include row();
     justify-content: center;
     position: sticky;
-    top: rem-calc(130);
+    top: rem-calc(50);
+    @include breakpoint(medium up) {
+      top: rem-calc(130);
+    } 
     overflow: hidden;
     z-index: 20;
     &__item {
       @include column();
       margin-bottom: rem-calc(16); 
+      @include breakpoint(small only) { 
+        margin-bottom: rem-calc(5);//
+      }
       &--active {
         order: 3; 
         @include breakpoint(medium up) {

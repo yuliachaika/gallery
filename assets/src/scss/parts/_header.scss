@@ -1,6 +1,9 @@
 .header {
 	width: 100%;
-	height: rem-calc(130); 
+	height: rem-calc(50);
+	@include breakpoint(medium up) {
+    height: rem-calc(130);
+  } 
 	position: relative;
   overflow: hidden;
 	&__fix {
@@ -13,7 +16,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: rem-calc(130);
+    height: rem-calc(50);
+		@include breakpoint(medium up) {
+	    height: rem-calc(130);
+	  } 
     z-index: 10;
     background: url(../img/bg-01.jpg) center no-repeat;
     background-size: cover;
