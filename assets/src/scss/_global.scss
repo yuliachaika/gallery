@@ -14,12 +14,12 @@ html {
 
 body {
 	margin: 0; 
+	font-family: $primary-font;
 }
 
 a, button, input, textarea  {
 	cursor: pointer;
   transition:
-  background .6s ease-in,
   border-color .4s ease-in,
   color .4s ease-in,
   background-color .4s ease-in;

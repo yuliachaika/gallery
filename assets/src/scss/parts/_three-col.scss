@@ -27,7 +27,7 @@
     padding: rem-calc(30); 
     display: block;
     width: 100%; 
-    background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0));
+    // background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0));
     @include link(28);
     text-align: center;
     transition: all .4s ease-out;
@@ -60,12 +60,41 @@
     text-align: justify;
   }
   &__img {
+    // position: relative;
     &-wrap {
-      margin-bottom: rem-calc(10);
+      margin-bottom: rem-calc(15); 
+      // @include breakpoint(medium up) {
+      //   &:last-child {
+      //     margin-bottom: 0;
+      //   } 
+      // }
       transition: all .4s ease-in;
+      position: relative;
       &:hover {
         cursor: pointer;
       } 
+    }
+    &-title {
+      padding: rem-calc(10) rem-calc(15);
+      width: 100%; 
+      color: $white;
+      font-size: rem-calc(20);
+      font-weight: 400;
+      background-color: $black;
+      transition:
+      color .4s ease-in,
+      background-color .6s ease-out;
+      &:hover {
+        color: $black;
+        background-color: $white; 
+      }
+      &-wrap {
+        position: absolute;
+        overflow: hidden;
+        right: 0;
+        bottom: rem-calc(5);
+        background-color: $black;
+      }
     }
   }
 }
