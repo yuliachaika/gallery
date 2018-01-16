@@ -1,0 +1,72 @@
+.three-col {
+  // border: 1px solid;
+  margin: 0 rem-calc(8);
+  width: 90%;
+  @include breakpoint(small only) {
+    max-width: rem-calc(400);
+  } 
+  @include breakpoint(medium up) {
+    width: 30%;
+    margin-bottom: rem-calc(300); 
+  }
+  background: linear-gradient(to right, #444446, rgba(125, 185, 232, 0));
+  &__wrap {
+    width: 100%;
+    height: 100%; 
+    position: relative;
+  }
+  &__title {
+    width: 100%; 
+    position: sticky;
+    top: rem-calc(130);
+    overflow: hidden;
+    z-index: 20;
+  }
+  &__link {
+    // border: 2px solid #fff;
+    padding: rem-calc(30); 
+    display: block;
+    width: 100%; 
+    background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0));
+    @include link(28);
+    text-align: center;
+    transition: all .4s ease-out;
+    position: relative;
+      &:hover::after {
+        opacity: 1;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0.5));
+        opacity: 0;
+        transition: opacity .4s ease-out;
+        z-index: -1; 
+        &:hover {
+          opacity: 1;
+        }   
+      }
+    &--padding {
+      padding: rem-calc(48);
+    }
+  }
+  &__text {
+    padding: rem-calc(10);
+    @include text(18, $white);
+    text-align: justify;
+  }
+  &__img {
+    &-wrap {
+      margin-bottom: rem-calc(10);
+      transition: all .4s ease-in;
+      &:hover {
+        cursor: pointer;
+      } 
+    }
+  }
+}
+

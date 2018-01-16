@@ -1,0 +1,22 @@
+.header {
+	width: 100%;
+	height: rem-calc(130); 
+	position: relative;
+  overflow: hidden;
+	&__fix {
+		width: 100%; 
+		height: rem-calc(110); 
+		position: fixed;
+	}
+	&__row {
+		position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: rem-calc(130);
+    z-index: 10;
+    background: url(../img/bg-01.jpg) center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+	}
+}
