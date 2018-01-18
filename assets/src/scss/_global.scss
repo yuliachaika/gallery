@@ -51,36 +51,28 @@ img {
 
 .content {
 	width: 100%; 
+	// height: 100vh;
 	min-height: 100vh;
-	background: url(../img/bg-01.jpg) center no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
+	// background: url(../img/bg-01.jpg) center no-repeat;
+	// background-size: cover;
+	// background-attachment: fixed;
+	position: relative;
+	z-index: 1 
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background: url(../img/bg-01.jpg) center no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		top: 0;
+		left: 0;
+	}
 }
 
-/*Edge*/
-@supports ( -ms-accelerator:true ) 
-{
-    html{
-        overflow: hidden;
-        height: 100%;    
-    }
-    body{
-        overflow: auto;
-        height: 100%;
-    }
-}
-/*Ie 10/11*/
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) 
-{
-    html{
-        overflow: hidden;
-        height: 100%;    
-    }
-    body{
-        overflow: auto;
-        height: 100%;
-    }
-}
+
 
 
 
