@@ -20,24 +20,12 @@
 		@include breakpoint(medium up) {
 	    height: rem-calc(130);
 	  } 
-    z-index: 10;
+    z-index: 20;
     background: url(../img/bg-01.jpg);
     background-position-x: center;
 		background-position-y: center;
 		background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    // &::after {
-    // 	content: "";
-    // 	position: absolute;
-    // 	width: 100%;
-    // 	height: 100%;
- 			// z-index: 100;
- 			// background: url(../img/bg-01.jpg) center no-repeat;
-	   //  background-size: cover;
-	   //  background-attachment: fixed;
-	   //  top: 0;
-    // 	left: 0;
-    // }
 	}
 }

@@ -9,6 +9,7 @@
     width: 100%; 
     @include row();
     justify-content: center;
+    z-index: 10; 
   }
   &__wrap {
     width: 100%;
@@ -67,6 +68,7 @@
     &--pd {
       padding-bottom: rem-calc(150); 
     }
+    z-index: 1;
   }
   &__img {
     &-wrap {
@@ -135,7 +137,7 @@
       top: rem-calc(130);
     } 
     overflow: hidden;
-    z-index: 20;
+    z-index: 15;
     &__item {
       @include column();
       margin-bottom: rem-calc(16); 
