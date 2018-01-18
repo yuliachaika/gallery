@@ -57,7 +57,30 @@ img {
 	background-attachment: fixed;
 }
 
-
+/*Edge*/
+@supports ( -ms-accelerator:true ) 
+{
+    html{
+        overflow: hidden;
+        height: 100%;    
+    }
+    body{
+        overflow: auto;
+        height: 100%;
+    }
+}
+/*Ie 10/11*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) 
+{
+    html{
+        overflow: hidden;
+        height: 100%;    
+    }
+    body{
+        overflow: auto;
+        height: 100%;
+    }
+}
 
 
 
