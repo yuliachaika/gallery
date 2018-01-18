@@ -21,7 +21,10 @@
 	    height: rem-calc(130);
 	  } 
     z-index: 10;
-    background: url(../img/bg-01.jpg) center no-repeat;
+    background: url(../img/bg-01.jpg);
+    background-position-x: center;
+		background-position-y: center;
+		background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     // &::after {
