@@ -58,6 +58,7 @@ gulp.task('javascript', function (cb) {
             gulp.src([
                 'assets/components/jquery/dist/jquery.js',
                 'assets/src/javascript/plugins/*.js',
+                'node_modules/stickyfilljs/dist/stickyfill.min.js',
                 'assets/src/javascript/global.js'])
             .pipe(concat('global.js')),
             // uglify(), 
