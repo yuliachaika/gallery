@@ -27,6 +27,11 @@
     } 
     overflow: hidden;
     z-index: 20;
+    &::before, 
+    &::after {
+      content: "";
+      display: table; 
+    }
   }
   &__link {
     // border: 2px solid #fff;

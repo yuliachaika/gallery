@@ -4,6 +4,10 @@
     
     $(document).ready( function() {
 
+      //stickyfill 
+      var elements = $('.three-col__title');
+      Stickyfill.add(elements);
+
       //--scroll to top 
       $(function (){
         $("#back-top").hide();
