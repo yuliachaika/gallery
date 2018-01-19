@@ -35,7 +35,6 @@
     }
   }
   &__link {
-    // border: 2px solid #fff;
     padding: rem-calc(10);
     @include breakpoint(medium up) {
       @include col();
@@ -46,7 +45,7 @@
     @include row();
     justify-content: center; 
     align-items: center;
-    background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0.5));
+    background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0)); //111
     @include link(28);
     text-align: center;
     transition: all .4s ease-out;
@@ -77,32 +76,34 @@
       position: relative;
       &:hover {
         cursor: pointer;
+        & .three-col__img-title {
+          color: $black;
+          background-color: $white; 
+        }
       } 
     }
     &-title {
-      padding: rem-calc(10) rem-calc(15);
+      padding: rem-calc(10) 0 0 rem-calc(15);
       width: 100%; 
       color: $white;
-      font-size: rem-calc(20);
+      font-family: $primary-font;
+      font-size: rem-calc(22);
       font-weight: 400;
       background-color: $black;
       transition:
       color .4s ease-in,
       background-color .6s ease-out;
-      &:hover {
-        color: $black;
-        background-color: $white; 
-      }
       &-wrap {
         position: absolute;
         overflow: hidden;
         right: 0;
-        bottom: rem-calc(5);
+        bottom: rem-calc(4); //??
         background-color: $black;
       }
     }
   }
   &__tab {
+    width: 100%; //1111
     display: none;
     &--active {
       display: block;
@@ -114,13 +115,14 @@
     justify-content: center;
   }
   &__col {
-    min-height: 100vh; 
+    // min-height: 100vh; 
     @include column();
-    @include col();
+    display: inline-block;
+    // @include col();
     @include breakpoint(medium up) {
       margin-bottom: rem-calc(300); 
       &--center {
-        justify-content: flex-end;
+        // justify-content: flex-end;
       }
       &--bg {
         background: linear-gradient(to right, #444446, rgba(125, 185, 232, 0));
@@ -137,7 +139,7 @@
       top: rem-calc(130);
     } 
     overflow: hidden;
-    z-index: 15;
+    z-index: 20;
     &__item {
       @include column();
       margin-bottom: rem-calc(16); 

@@ -5,8 +5,8 @@
     $(document).ready( function() {
 
       //stickyfill 
-      var elements = $('.three-col__title');
-      Stickyfill.add(elements);
+      var elements = $('.three-col__title, .three-col-nav');
+      Stickyfill.add(elements);
 
       //--scroll to top 
       $(function (){
