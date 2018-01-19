@@ -5,7 +5,7 @@
 html {
 	// overflow: auto;
 	// height: 100%; 
-	font-size: rem-calc(16);
+	// font-size: rem-calc(16);
 	@include breakpoint(medium only) {
 		font-size: 90%;
 	}
