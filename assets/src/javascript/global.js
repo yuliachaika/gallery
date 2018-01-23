@@ -4,6 +4,13 @@
     
     $(document).ready( function() {
 
+      //quick-view
+      $(function() {
+        if ($.fn.quickView) {
+            $('.content').quickView(); //change selector!!!
+        }   
+      });
+
       //stickyfill 
       var elements = $('.three-col__title, .three-col-nav');
       Stickyfill.add(elements);

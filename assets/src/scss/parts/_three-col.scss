@@ -4,8 +4,10 @@
   @include breakpoint(medium up) {
     margin-bottom: rem-calc(300); 
   }
-  background: linear-gradient(to right, #444446, rgba(125, 185, 232, 0));
+  background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0));
+  z-index: 1;
   &__row {
+    margin-top: rem-calc(20); 
     width: 100%; 
     @include row();
     justify-content: center;
@@ -45,7 +47,6 @@
     @include row();
     justify-content: center; 
     align-items: center;
-    background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0)); //111
     @include link(28);
     text-align: center;
     transition: all .4s ease-out;
@@ -59,6 +60,9 @@
         color: $white;
       }
     }
+    &--bg {
+      background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0)); //111
+    }
   }
   &__text {
     padding: rem-calc(10);
@@ -67,7 +71,6 @@
     &--pd {
       padding-bottom: rem-calc(150); 
     }
-    z-index: 1;
   }
   &__img {
     &-wrap {
@@ -84,7 +87,7 @@
       } 
     }
     &-title {
-      padding: rem-calc(10) 0 0 rem-calc(15);
+      padding: rem-calc(10) rem-calc(15);
       width: 100%; 
       color: $white;
       font-family: $primary-font;
