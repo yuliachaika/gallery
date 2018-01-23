@@ -44,17 +44,17 @@
                 $productUrl = 'assets/dist/product-data/product.json'; 
 
             $.ajax( $productUrl ).done(function(response) {
-                $('.modal-info__num') 
+                $('#modal__num') 
                 .html(response.itemId);
 
-                $('.modal-info__size')
+                $('#modal__size')
                 .html('size: ' + response.itemSize);
 
-                $('.modal-info__fabric')
+                $('#modal__fabric')
                 .html('fabric: ' + response.itemFabric);
 
-                $('.modal-info__price')
-                .html('price: ' + response.itemPrice);
+                $('#modal__price')
+                .html('cena: ' + response.itemPrice + '&#8364;');
 
                 $('.modal-img__wrap')
                 .html(response.imgUrl);

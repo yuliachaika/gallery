@@ -2,43 +2,158 @@
 	@include row();
 	background: transparent;
 	@include breakpoint(small only) {
-  	@include col();
-  }
-  &-info {
-  	width: 35%;
+		@include col();
+	}
+	&-info {
+		width: 35%;
 		@include col();
 		flex-wrap: nowrap; 
 		justify-content: space-between;
-  	@include breakpoint(small only) {
-  	width: 100%;
-  	} 
-  	&__content {
-  		width: 100%;
-  		height: 80%; 
+		@include breakpoint(small only) {
+			width: 100%;
+		} 
+		&__content {
+			width: 100%;
+			height: 80%; 
+			padding: $column-gutter $column-gutter $column-gutter 0; 
   		// height: calc(80% - 40px); 
   		background: linear-gradient(to right, $white, transparent);
   		@include breakpoint(large up) {
-				// height: calc(80% - 40px); 	  	}  
+  			padding: $img-margin $img-margin $img-margin 0; 	  	
+  		}  
   	}
-
+  &__carre {
+  	margin-bottom: rem-calc(10);
+  	padding-left: $column-gutter; 
+  	@include breakpoint(large up) {
+  		padding-left: $img-margin; 	  	
+  	}   
+  }
+  &__price {
+  	margin-bottom: rem-calc(10); 
+  }
+  &__num {
+  	color: $gray;
+  	font-family: $primary-font;
+  	font-size: rem-calc(14);
+  	line-height: 1.2; 
+  	font-weight: 400;
+  }
+  &__text {
+  	color: $black;
+  	font-family: $primary-font;
+  	font-size: rem-calc(10);
+  	font-weight: 400;
+  	padding-left: $column-gutter; 
+  	@include breakpoint(large up) {
+  		padding-left: $img-margin; 	  	
+  	} 
+  	&--color {
+  		color: $gray;
+  	}
   }
 }
-  &-img {
-  	width: 100%;
+&-form {
+	border-top: 1px solid rgba(255, 255, 255, 0.8);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+	&__item {
+		width: 100%;
+		background: transparent;
+		border: none; 
+		padding: rem-calc(10); 
+		padding-left: $column-gutter; 
+  	@include breakpoint(large up) {
+  		padding-left: $img-margin; 	  	
+  	} 
+  	color: $light-gray;
+  	font-family: $primary-font;
+  	font-size: rem-calc(14);
+  	line-height: 1.2; 
+  	font-weight: 400;
+  	&::-webkit-input-placeholder, 
+    &::-moz-placeholder,
+		&:-moz-placeholder, 
+		&:-ms-input-placeholder {
+			color: $light-gray !important;
+			font-weight: 400;
+		}
+		&::placeholder {
+			color: $light-gray;
+			font-weight: 400;
+		}
+	}
+	&__area {
+		border-top: 1px solid rgba(255, 255, 255, 0.8);
+		resize: none;
+	}
+}
+&-footer {
+	padding-top: rem-calc(10); 
+	padding-left: $column-gutter;
+  @include breakpoint(large up) {
+  	padding-left: $img-margin; 	  	
+  } 
+	@include row();
+	justify-content: space-between;
+	&__link {
+		display: block;
+    color: $blue;
+    width: rem-calc(40);
+    height: rem-calc(40);
+    border: 3px solid $blue;
+    border-radius: 50%;
+    text-align: center;
+    font-family: $primary-font;
+  	font-size: rem-calc(22);
+  	font-weight: 800;
+    line-height: rem-calc(22);
+    // line-height: 1;
+    letter-spacing: rem-calc(1.2);
+    &:hover,
+    &:focus,
+    &:active {
+    	color: $light-gray;
+    	border-color: $light-gray;
+    }
+	}
+	&__submit {
+		width: rem-calc(130);
+    background-color: $light-gray;
+    border: 1px solid $light-gray;
+    color: $white;
+    height: rem-calc(40);
+    line-height: rem-calc(32);
+    border-radius: 30px;
+    font-family: $primary-font;
+  	font-size: rem-calc(14);
+  	font-weight: 400;
+    text-align: center;
+    transition: all .4s ease-out; 
+    &:hover {
+    	background-color: rgba(176, 178, 180, 0.7); 
+    }
+
+	}
+	
+}
+&-img {
+	width: 100%;
   	// height: auto;
   	overflow: hidden;
   	@include breakpoint(small only) {
-	  	height: auto;
-	  }  
+  		height: auto;
+  	}  
   	&__wrap {
-	  	width: 65%;
-	  	display: flex;
-	  	@include breakpoint(small only) {
-	  	width: 100%;
-	  	display: block; 
-	  	}   
-	  }
-  
+  		width: 65%;
+  		display: flex;
+  		@include breakpoint(small only) {
+  			width: 100%;
+  			display: block; 
+  		}
+  // 		@include breakpoint(medium only) {
+		// 	width: 60%;
+		// }    
+  	}
   }
   &-buy {
   	width: 100%; 
@@ -47,26 +162,43 @@
   	border: none;
   	background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0));
   	@include row();
-    justify-content: center; 
-    align-items: center;
-    @include link(28);
-    text-align: center;
-    color: $white;
-    @include breakpoint(medium up) {
+  	justify-content: center; 
+  	align-items: center;
+  	@include link(28);
+  	text-align: center;
+  	color: $white;
+    // @include breakpoint(medium up) {
   		// padding: rem-calc(40);
-  	}  
+  	// }  
   	&__wrap {
   		width: 100%;
   		height: 20%;
-    	margin-bottom: rem-calc(20);
-    	@include breakpoint(small only) {
-    		height: auto;
+  		margin-bottom: $column-gutter;
+  		@include breakpoint(small only) {
+  			height: auto;
   			margin-bottom: 0; 
   		} 
   		@include breakpoint(large up) {
-    		margin-bottom: $img-margin; 
+  			// margin-bottom: 30px; 
+  			margin-bottom: $img-margin; 
   		} 
   	}
   }
 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
