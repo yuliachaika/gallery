@@ -14,20 +14,28 @@
   	} 
   	&__content {
   		width: 100%;
-  		height: calc(80% - 40px); 
-  		background: linear-gradient(to right, $white, transparent); 
+  		height: 80%; 
+  		// height: calc(80% - 40px); 
+  		background: linear-gradient(to right, $white, transparent);
+  		@include breakpoint(large up) {
+				// height: calc(80% - 40px); 	  	}  
   	}
 
   }
+}
   &-img {
   	width: 100%;
   	// height: auto;
   	overflow: hidden;
+  	@include breakpoint(small only) {
+	  	height: auto;
+	  }  
   	&__wrap {
 	  	width: 65%;
 	  	display: flex;
 	  	@include breakpoint(small only) {
-	  	width: 100%; 
+	  	width: 100%;
+	  	display: block; 
 	  	}   
 	  }
   
@@ -35,7 +43,7 @@
   &-buy {
   	width: 100%; 
   	height: 100%; 
-  	padding: rem-calc(40); 
+  	padding: rem-calc(10); 
   	border: none;
   	background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0));
   	@include row();
@@ -43,14 +51,20 @@
     align-items: center;
     @include link(28);
     text-align: center;
-    color: $white; 
+    color: $white;
+    @include breakpoint(medium up) {
+  		// padding: rem-calc(40);
+  	}  
   	&__wrap {
   		width: 100%;
   		height: 20%;
-    	margin-bottom: $img-margin;
+    	margin-bottom: rem-calc(20);
     	@include breakpoint(small only) {
     		height: auto;
   			margin-bottom: 0; 
+  		} 
+  		@include breakpoint(large up) {
+    		margin-bottom: $img-margin; 
   		} 
   	}
   }

@@ -44,11 +44,14 @@ $media-queries: true;
     margin: auto;
     // margin-top: -200px;
     @media screen and (min-width: $breakpoint-medium) {
+      top: 80px;
       width: 80%; 
+      // max-width: 800px;
     }
     @media screen and (min-width: $breakpoint-large) {
       top: 130px;
       max-width: 900px;
+      
     }
     &-inner {
       position: relative;
