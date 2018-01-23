@@ -10345,7 +10345,7 @@ return jQuery;
                 $productUrl = 'assets/dist/product-data/product.json'; 
 
             $.ajax( $productUrl ).done(function(response) {
-                $('#modal__num') 
+                $('#modal__num, .modal-img__title') 
                 .html(response.itemId);
 
                 $('#modal__size')

@@ -128,7 +128,6 @@
   	font-size: rem-calc(14);
   	font-weight: 400;
     text-align: center;
-    transition: all .4s ease-out; 
     &:hover {
     	background-color: rgba(176, 178, 180, 0.7); 
     }
@@ -150,9 +149,28 @@
   			width: 100%;
   			display: block; 
   		}
-  // 		@include breakpoint(medium only) {
-		// 	width: 60%;
-		// }    
+  		&:hover {
+  			cursor: pointer;
+        & .modal-img__title {
+          color: $black;
+          background-color: $white; 
+        }
+  		}  
+  	}
+  	&__title {
+  		padding: rem-calc(10) rem-calc(15);
+      width: 100%; 
+      color: $white;
+      font-family: $primary-font;
+      font-size: rem-calc(32);
+      font-weight: 400;
+      background-color: $dark-gray;
+      transition:
+      color .4s ease-in,
+      background-color .6s ease-out;
+  		&-wrap {
+  			@extend .three-col__img-title-wrap;
+  		}
   	}
   }
   &-buy {

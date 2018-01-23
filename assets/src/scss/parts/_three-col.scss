@@ -97,7 +97,7 @@
       font-family: $primary-font;
       font-size: rem-calc(22);
       font-weight: 400;
-      background-color: $black;
+      background-color: $dark-gray;
       transition:
       color .4s ease-in,
       background-color .6s ease-out;
@@ -106,7 +106,7 @@
         overflow: hidden;
         right: 0;
         bottom: rem-calc(0); //??
-        background-color: $black;
+        background-color: $dark-gray;
         // &--pd {
         //   bottom: rem-calc(4); //??
         // }
