@@ -16,24 +16,43 @@
       Stickyfill.add(elements);
 
       //--scroll to top 
-      $(function (){
-        $("#back-top").hide();
-      
-        $(window).scroll(function (){
-          if ($(this).scrollTop() > 100){
-            $("#back-top").fadeIn();
-          } else{
-            $("#back-top").fadeOut();
-          }
-        });
+      $(function (){
+        $("#back-top").hide();
+      
+        $(window).scroll(function (){
+          if ($(this).scrollTop() > 100){
+            $("#back-top").fadeIn();
+          } else{
+            $("#back-top").fadeOut();
+          }
+        });
 
-        $("#back-top a").click(function (){
-          $("body,html").animate({
-            scrollTop:0
-          }, 800);
-          return false;
-        });
-      });
+        $("#back-top a").click(function (){
+          $("body,html").animate({
+            scrollTop:0
+          }, 800);
+          return false;
+        });
+
+        //--scroll to top ie
+        if(navigator.userAgent.match(/MSIE 10/i) || navigator.userAgent.match(/Trident.*rv:/)) {
+          $("body").scroll(function (){
+            if ($(this).scrollTop() > 100){
+              $("#back-top").fadeIn();
+            } else{
+              $("#back-top").fadeOut();
+            }
+          });
+
+          $("#back-top a").click(function (){
+            $("body").animate({
+              scrollTop:0
+            }, 800);
+            return false;
+          });
+        }
+
+      });
 
       //tabs
         $('.three-col-nav__link').on('click', function(e) {

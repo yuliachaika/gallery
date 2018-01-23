@@ -34,24 +34,41 @@ $media-queries: true;
     // } 
   }
   &-canvas {
-    max-width: 80%; 
-    // @include rem(max-width, 800px);
+    width: 80%; 
+    max-width: 800px; 
+    // max-height: 90vh; 
+    // max-width: rem-calc(1140);
+    // @include rem(max-width, 1000px);
     // margin: 0 auto;
     position: relative;
     display: block;
-    // max-width: 57.14286rem;
-    top: 50%;
+    top: 50px; 
+    left: 0;
+    right: 0;
+    bottom: 0;   
+    // top: 50%;
     margin: auto;
-    margin-top: -200px;
+    // margin-top: -200px;
+    @media screen and (min-width: $breakpoint-medium) {
+      
+      // @include rem(max-width, 1000px);
+    }
+    @media screen and (min-width: $breakpoint-large) {
+      top: 130px;
+      max-width: 1140px; 
+      // @include rem(max-width, 1140px);
+    }
     &-inner {
-      @include rem(max-height, 400px);
+      // @include rem(max-height, 400px); ///////!!!!!!!!!
       // @include clearfix();
-      background-color: map-get($brand-color, 'white');
+      // background-color: map-get($brand-color, 'white');
       position: relative;
     } 
   }
   &-overlay {
-    background-color: rgba(0, 0, 0, .5);
+    background: url(../img/bg-01.jpg) center no-repeat;
+    background-size: cover;
+    // background-color: rgba(0, 0, 0, .5); ///
     position: fixed;
     top: 0;
     left: 0;

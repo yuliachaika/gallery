@@ -44,8 +44,8 @@
                 $productUrl = 'assets/dist/product-data/product.json'; 
 
             $.ajax( $productUrl ).done(function(response) {
-                $('.modal-info__carre') 
-                .html('carre: ' + response.itemId);
+                $('.modal-info__num') 
+                .html(response.itemId);
 
                 $('.modal-info__size')
                 .html('size: ' + response.itemSize);
@@ -56,8 +56,8 @@
                 $('.modal-info__price')
                 .html('price: ' + response.itemPrice);
 
-                // $('.modal-img__wrap')
-                // .html(response.img);
+                $('.modal-img__wrap')
+                .html(response.imgUrl);
 
                 this._resetModal();
                 $(this.options.selectors.quickViewModal)

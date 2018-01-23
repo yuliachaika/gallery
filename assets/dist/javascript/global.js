@@ -10345,8 +10345,8 @@ return jQuery;
                 $productUrl = 'assets/dist/product-data/product.json'; 
 
             $.ajax( $productUrl ).done(function(response) {
-                $('.modal-info__carre') 
-                .html('carre: ' + response.itemId);
+                $('.modal-info__num') 
+                .html(response.itemId);
 
                 $('.modal-info__size')
                 .html('size: ' + response.itemSize);
@@ -10357,8 +10357,8 @@ return jQuery;
                 $('.modal-info__price')
                 .html('price: ' + response.itemPrice);
 
-                // $('.modal-img__wrap')
-                // .html(response.img);
+                $('.modal-img__wrap')
+                .html(response.imgUrl);
 
                 this._resetModal();
                 $(this.options.selectors.quickViewModal)
@@ -12277,24 +12277,43 @@ $.magnificPopup.registerModule(RETINA_NS, {
       Stickyfill.add(elements);
 
       //--scroll to top 
-      $(function (){
-        $("#back-top").hide();
-      
-        $(window).scroll(function (){
-          if ($(this).scrollTop() > 100){
-            $("#back-top").fadeIn();
-          } else{
-            $("#back-top").fadeOut();
-          }
-        });
+      $(function (){
+        $("#back-top").hide();
+      
+        $(window).scroll(function (){
+          if ($(this).scrollTop() > 100){
+            $("#back-top").fadeIn();
+          } else{
+            $("#back-top").fadeOut();
+          }
+        });
 
-        $("#back-top a").click(function (){
-          $("body,html").animate({
-            scrollTop:0
-          }, 800);
-          return false;
-        });
-      });
+        $("#back-top a").click(function (){
+          $("body,html").animate({
+            scrollTop:0
+          }, 800);
+          return false;
+        });
+
+        //--scroll to top ie
+        if(navigator.userAgent.match(/MSIE 10/i) || navigator.userAgent.match(/Trident.*rv:/)) {
+          $("body").scroll(function (){
+            if ($(this).scrollTop() > 100){
+              $("#back-top").fadeIn();
+            } else{
+              $("#back-top").fadeOut();
+            }
+          });
+
+          $("#back-top a").click(function (){
+            $("body").animate({
+              scrollTop:0
+            }, 800);
+            return false;
+          });
+        }
+
+      });
 
       //tabs
         $('.three-col-nav__link').on('click', function(e) {
