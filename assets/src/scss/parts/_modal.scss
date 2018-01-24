@@ -4,6 +4,13 @@
 	@include breakpoint(small only) {
 		@include col();
 	}
+  &-hide {
+    display: none;
+    margin-top: $img-margin; 
+    &.is-active {
+      display: block;
+    }
+  }
 	&-info {
 		width: 35%;
 		@include col();

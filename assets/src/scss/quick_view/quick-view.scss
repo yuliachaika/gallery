@@ -26,9 +26,11 @@ $media-queries: true;
       position: fixed;
       right: 0;
     top: 0;
-      z-index: 55; 
+    z-index: 55; 
     &.is-active {
       display: block;
+      overflow-x: hidden;
+      overflow-y: scroll;
     }
   }
   &-canvas {
@@ -46,11 +48,12 @@ $media-queries: true;
     @media screen and (min-width: $breakpoint-medium) {
       top: 80px;
       width: 80%; 
+      max-width: 900px;
       // max-width: 800px;
     }
     @media screen and (min-width: $breakpoint-large) {
       top: 130px;
-      max-width: 900px;
+      max-width: 1000px;
       
     }
     &-inner {
