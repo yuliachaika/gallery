@@ -1,9 +1,9 @@
 .modal {
 	@include row();
 	background: transparent;
-	@include breakpoint(small only) {
-		@include col();
-	}
+	// @include breakpoint(small only) {
+		// @include col();
+	// }
   &-hide {
     display: none;
     margin-top: $img-margin; 
@@ -143,15 +143,16 @@
   &-img {
   	width: 100%;
     overflow: hidden;
-    @include breakpoint(small only) {
-      height: auto;
-    }  
+    // @include breakpoint(small only) {
+    //   height: auto;
+    // }  
     &__wrap {
       width: 65%;
       display: flex;
+      font-size: 0;
       @include breakpoint(small only) {
         width: 100%;
-        display: block; 
+        display: inline-block; 
       }
       &:hover {
         cursor: pointer;
