@@ -85,6 +85,7 @@
 	&__area {
 		border-top: 1px solid rgba(255, 255, 255, 0.8);
 		resize: none;
+    overflow: auto;
 	}
 }
 &-footer {
