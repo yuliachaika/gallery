@@ -17,6 +17,7 @@
     left: 0;
     width: 100%;
     height: rem-calc(50);
+    cursor: pointer;
 		@include breakpoint(medium up) {
 	    height: rem-calc(130);
 	  } 

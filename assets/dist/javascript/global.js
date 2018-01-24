@@ -12269,17 +12269,6 @@ $.magnificPopup.registerModule(RETINA_NS, {
     
     $(document).ready( function() {
 
-      //scroll behind modal
-
-      // $(function() {
-      //   if ($(".quick-view-modal").hasClass("is-active")) {
-      //     $("html").css("overflow-y","hidden");
-
-      //   } else {
-      //     $("html").css("overflow-y","");
-      //   }
-      // });
-
       //redirect to home page
       $(".content-bg, .header__row").on('click', function(e) {
         if ( e.target == $(this)[0] ) {

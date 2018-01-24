@@ -2,12 +2,6 @@
 	box-sizing: border-box;
 }
 
-// *,
-// *:before,
-// *:after {
-//     box-sizing: border-box;
-// }
-
 html {
 	@include breakpoint(medium down) {
 		font-size: 80%;
@@ -70,6 +64,7 @@ img {
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-attachment: fixed;
+		cursor: pointer;
 	}
 }
 
