@@ -65,11 +65,15 @@
                 .join(' '));
             }.bind(this));
 
+            $("html").css("overflow-y","hidden");
+
         },
         _closeModal: function() {
             $(this.options.selectors.quickViewModal)
             .removeClass(this.options.classNames.active
             .join(' '));
+
+            $("html").css("overflow-y","");
         },
         _resetModal: function() {
             this.$canvas.removeAttr("style");
