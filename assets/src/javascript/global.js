@@ -4,10 +4,18 @@
     
     $(document).ready( function() {
 
+      //redirect to home page
+      $(".content-bg, .header__row").on('click', function(e) {
+        if ( e.target == $(this)[0] ) {
+          var url = "index.html";
+          $(location).attr('href',url);
+        }
+      });
+
       //quick-view
       $(function() {
         if ($.fn.quickView) {
-            $('.content').quickView(); //change selector!!!
+            $('.content').quickView(); 
         }   
       });
 
@@ -58,7 +66,8 @@
         $('.three-col-nav__link').on('click', function(e) {
           e.preventDefault();
           var element = $(this);
-          var href = $($(this).attr('href')); 
+          var href = $($(this).attr('href'));
+
           element
           .addClass('three-col__link--active')
           .parent()
