@@ -1,9 +1,7 @@
+
 .modal {
-	@include row();
-	background: transparent;
-	// @include breakpoint(small only) {
-		// @include col();
-	// }
+  @include row();
+  background: transparent;
   &-hide {
     display: none;
     margin-top: $img-margin; 
@@ -15,7 +13,7 @@
     width: 35%;
     @include col();
     flex-wrap: nowrap; 
-    justify-content: space-between;
+    justify-content: flex-start;
     @include breakpoint(small only) {
       width: 100%;
     }
@@ -26,9 +24,13 @@
       display: none;
     }
     &__header {
-      &-hide { /////////////
+      &-hide { 
         padding: rem-calc(20) 0;
-        height: 30%;
+        padding-left: $column-gutter;
+        padding-bottom: rem-calc(40); 
+        @include breakpoint(large up) {
+        padding-left: $img-margin;       
+        } 
         @include row();
         justify-content: center;
         align-items: center; 
@@ -36,37 +38,35 @@
     }
     &__content {
       width: 100%;
-      height: 80%; 
+      display: flex;
+      flex-flow: column;
+      flex: 3 1 auto;
       padding: $column-gutter $column-gutter $column-gutter 0; 
-    	background: linear-gradient(to right, $white, transparent);
-    	@include breakpoint(large up) {
-    		padding: $img-margin $img-margin $img-margin 0; 	  	
-    	}
-      &-hide { ////////////// 
+      background: linear-gradient(to right, $white, transparent);
+      @include breakpoint(large up) {
+        padding: $img-margin $img-margin $img-margin 0;       
+      }
+      &-hide { 
         @include col();
-        justify-content: space-between;
-        padding-left: $column-gutter; 
-        @include breakpoint(large up) {
-          padding-left: $img-margin;       
-        }  
+        justify-content: flex-start;  
       }  
     }
     &__carre {
        margin-bottom: rem-calc(10);
        padding-left: $column-gutter; 
        @include breakpoint(large up) {
-        padding-left: $img-margin; 	  	
+        padding-left: $img-margin;      
       }   
     }
     &__price {
-    	margin-bottom: rem-calc(10); 
+      margin-bottom: rem-calc(10); 
     }
     &__num {
-    	color: $gray;
-    	font-family: $primary-font;
-    	font-size: rem-calc(14);
-    	line-height: 1.2; 
-    	font-weight: 400;
+      color: $gray;
+      font-family: $primary-font;
+      font-size: rem-calc(14);
+      line-height: 1.2; 
+      font-weight: 400;
       &-hide {
         font-size: rem-calc(16);
         color: $dark-gray;
@@ -74,37 +74,42 @@
       }
     }
     &__text {
-    	color: $black;
-    	font-family: $primary-font;
-    	font-size: rem-calc(10);
-    	font-weight: 400;
-    	padding-left: $column-gutter; 
-    	@include breakpoint(large up) {
-    		padding-left: $img-margin; 	  	
-    	} 
-    	&--color {
-    		color: $gray;
-    	}
+      color: $black;
+      font-family: $primary-font;
+      font-size: rem-calc(10);
+      font-weight: 400;
+      padding-left: $column-gutter; 
+      @include breakpoint(large up) {
+        padding-left: $img-margin;      
+      } 
+      &--color {
+        color: $gray;
+      }
     }
   }
   &-form {
-  	border-top: 1px solid rgba(255, 255, 255, 0.8);
-  	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    @include breakpoint(large up) {
+      padding-bottom: $img-margin; //      
+    } 
     &-hide {
-      height: 45%;
-      padding: rem-calc(20) 0;
+      padding: rem-calc(50) 0 rem-calc(50) $column-gutter;
       @include row();
       justify-content: center;
       align-items: center;
+      @include breakpoint(small only) {
+      padding: rem-calc(20) 0 rem-calc(20) $column-gutter;       
+    } 
     }
-  	&__item {
-  		width: 100%;
-  		background: transparent;
-  		border: none; 
-  		padding: rem-calc(10); 
-  		padding-left: $column-gutter; 
+    &__item {
+      width: 100%;
+      background: transparent;
+      border: none; 
+      padding: rem-calc(20); 
+      padding-left: $column-gutter; 
       @include breakpoint(large up) {
-        padding-left: $img-margin; 	  	
+        padding-left: $img-margin;      
       } 
       color: $light-gray;
       font-family: $primary-font;
@@ -130,19 +135,24 @@
     }
   }
   &-footer {
-  	padding-top: rem-calc(10); 
-  	padding-left: $column-gutter;
+    padding-top: rem-calc(10); 
+    padding-left: $column-gutter;
     @include breakpoint(large up) {
-    	padding-left: $img-margin; 	  	
+      padding-left: $img-margin;  
     } 
     @include row();
     justify-content: space-between;
     &-hide {
-      height: 25%;
       padding: rem-calc(20) 0; 
+      padding-left: $column-gutter;
+      padding-top: rem-calc(40); 
+      @include breakpoint(large up) {
+        padding-left: $img-margin;       
+      } 
       @include row();
       justify-content: center;
       align-items: center;
+      
     }
     &__link {
       display: block;
@@ -158,29 +168,21 @@
       line-height: rem-calc(22);
       letter-spacing: rem-calc(1.2);
       &:hover,
-      &:focus,
       &:active {
-      	color: $light-gray;
-      	border-color: $light-gray;
+        color: $light-gray;
+        border-color: $light-gray;
       }
     }
     &__submit {
+      @include btn();
       width: rem-calc(130);
       background-color: $light-gray;
       border: 1px solid transparent;
-      color: $white;
-      height: rem-calc(40);
-      line-height: rem-calc(32);
-      border-radius: 30px;
-      font-family: $primary-font;
-      font-size: rem-calc(14);
-      font-weight: 400;
-      text-align: center;
       &:hover {
-      	background-color: rgba(176, 178, 180, 0.7); 
+        background-color: rgba(176, 178, 180, 0.7); 
       }
       &-hide {
-        @extend .modal-footer__submit;
+        @include btn();
         width: rem-calc(150);
         background-color: $blue;
         border: 1px solid transparent;
@@ -191,11 +193,8 @@
     }
   }
   &-img {
-  	width: 100%;
+    width: 100%;
     overflow: hidden;
-    // @include breakpoint(small only) {
-    //   height: auto;
-    // }  
     &__wrap {
       width: 65%;
       display: flex;
@@ -230,8 +229,8 @@
   }
   &-buy {
     width: 100%; 
-    height: 100%; 
-    padding: rem-calc(10); 
+    // padding: $column-gutter; 
+    margin: 0;
     border: none;
     background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0));
     @include row();
@@ -239,14 +238,28 @@
     align-items: center;
     @include link(28);
     text-align: center;
-    color: $white; 
+    color: $white;
+    @include breakpoint(medium up) {
+      // padding: rem-calc(30);
+    } 
+    &__text {
+      display: block;
+      margin: 0 auto;
+    } 
     &__wrap {
       width: 100%;
-      height: 20%;
+      height: rem-calc(126); 
+      display: flex;
+      flex-flow: row;
+      // flex: 1 1 auto;
+      justify-content: center;
       margin-bottom: $column-gutter;
       @include breakpoint(small only) {
-        height: auto;
+        height: rem-calc(60); 
         margin-bottom: 0; 
+      } 
+      @include breakpoint(medium only) {
+        height: rem-calc(80); 
       } 
       @include breakpoint(large up) {
         margin-bottom: $img-margin; 
@@ -254,18 +267,5 @@
     }
   } 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
