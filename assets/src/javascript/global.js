@@ -15,7 +15,7 @@
           .addClass('modal-info__content-hide');
         });
 
-        $('.modal-footer__submit-hide').live('click', function(e) {
+        $('.modal-footer__submit-hide').on('click', function(e) {
           console.log("modalOne");
           $(".modal-info__content")
           .html(modalOne)
