@@ -34,3 +34,18 @@
 	flex-direction: column;
 	flex-wrap: wrap;
 }
+
+@mixin btn() {
+  color: $white;
+  height: rem-calc(40);
+  line-height: rem-calc(32);
+  border-radius: 30px;
+  font-family: $primary-font;
+  font-size: rem-calc(14);
+  font-weight: 400;
+  text-align: center;
+}
+
+
+
+

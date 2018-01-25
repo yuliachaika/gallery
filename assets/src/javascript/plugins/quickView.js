@@ -76,6 +76,7 @@
             $("html").css("overflow-y","");
 
             $(".modal-info__content").html(($("#modal-info-show").html()));
+            $(".modal-hide").hide();
             
             console.log('removeClassClass');
         },
