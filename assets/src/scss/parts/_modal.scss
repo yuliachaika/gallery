@@ -91,7 +91,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid rgba(255, 255, 255, 0.8);
     @include breakpoint(large up) {
-      padding-bottom: $img-margin; //      
+      padding-bottom: $img-margin;     
     } 
     &-hide {
       padding: rem-calc(50) 0 rem-calc(50) $column-gutter;
@@ -229,19 +229,12 @@
   }
   &-buy {
     width: 100%; 
-    // padding: $column-gutter; 
     margin: 0;
     border: none;
     background: linear-gradient(to right, $dark-gray, rgba(125, 185, 232, 0));
-    @include row();
-    justify-content: center; 
-    align-items: center;
     @include link(28);
     text-align: center;
     color: $white;
-    @include breakpoint(medium up) {
-      // padding: rem-calc(30);
-    } 
     &__text {
       display: block;
       margin: 0 auto;
@@ -251,7 +244,6 @@
       height: rem-calc(126); 
       display: flex;
       flex-flow: row;
-      // flex: 1 1 auto;
       justify-content: center;
       margin-bottom: $column-gutter;
       @include breakpoint(small only) {
