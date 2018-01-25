@@ -18,16 +18,38 @@
     justify-content: space-between;
     @include breakpoint(small only) {
       width: 100%;
-    } 
+    }
+    &-hide {
+      display: none;
+    }
+    &-show {
+      display: none;
+    }
+    &__header {
+      &-hide { /////////////
+        padding: rem-calc(20) 0;
+        height: 30%;
+        @include row();
+        justify-content: center;
+        align-items: center; 
+      }
+    }
     &__content {
       width: 100%;
       height: 80%; 
       padding: $column-gutter $column-gutter $column-gutter 0; 
-    		// height: calc(80% - 40px); 
     	background: linear-gradient(to right, $white, transparent);
     	@include breakpoint(large up) {
     		padding: $img-margin $img-margin $img-margin 0; 	  	
-    	}  
+    	}
+      &-hide { ////////////// 
+        @include col();
+        justify-content: space-between;
+        padding-left: $column-gutter; 
+        @include breakpoint(large up) {
+          padding-left: $img-margin;       
+        }  
+      }  
     }
     &__carre {
        margin-bottom: rem-calc(10);
@@ -45,6 +67,11 @@
     	font-size: rem-calc(14);
     	line-height: 1.2; 
     	font-weight: 400;
+      &-hide {
+        font-size: rem-calc(16);
+        color: $dark-gray;
+        text-align: center;
+      }
     }
     &__text {
     	color: $black;
@@ -63,6 +90,13 @@
   &-form {
   	border-top: 1px solid rgba(255, 255, 255, 0.8);
   	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    &-hide {
+      height: 45%;
+      padding: rem-calc(20) 0;
+      @include row();
+      justify-content: center;
+      align-items: center;
+    }
   	&__item {
   		width: 100%;
   		background: transparent;
@@ -103,6 +137,13 @@
     } 
     @include row();
     justify-content: space-between;
+    &-hide {
+      height: 25%;
+      padding: rem-calc(20) 0; 
+      @include row();
+      justify-content: center;
+      align-items: center;
+    }
     &__link {
       display: block;
       color: $blue;
@@ -126,7 +167,7 @@
     &__submit {
       width: rem-calc(130);
       background-color: $light-gray;
-      border: 1px solid $light-gray;
+      border: 1px solid transparent;
       color: $white;
       height: rem-calc(40);
       line-height: rem-calc(32);
@@ -137,6 +178,15 @@
       text-align: center;
       &:hover {
       	background-color: rgba(176, 178, 180, 0.7); 
+      }
+      &-hide {
+        @extend .modal-footer__submit;
+        width: rem-calc(150);
+        background-color: $blue;
+        border: 1px solid transparent;
+        &:hover {
+          background-color: rgba(30, 165, 213, 0.7) ;
+        }
       }
     }
   }

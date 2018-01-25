@@ -4,6 +4,28 @@
     
     $(document).ready( function() {
 
+      //change modal content
+      $(function() {
+        var modalOne = $("#modal-info-show").html();
+        var modalTwo = $("#modal-info-hide").html();
+        
+        $('.modal-footer__submit').on('click', function(e) {
+          $(".modal-info__content")
+          .html(modalTwo)
+          .addClass('modal-info__content-hide');
+        });
+
+        $('.modal-footer__submit-hide').live('click', function(e) {
+          console.log("modalOne");
+          $(".modal-info__content")
+          .html(modalOne)
+          .removeClassClass('modal-info__content-hide');
+        });
+
+
+      });
+
+
       //redirect to home page
       $(".content-bg, .header__row").on('click', function(e) {
         if ( e.target == $(this)[0] ) {

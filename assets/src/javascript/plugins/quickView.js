@@ -74,6 +74,10 @@
             .join(' '));
 
             $("html").css("overflow-y","");
+
+            $(".modal-info__content").html(($("#modal-info-show").html()));
+            
+            console.log('removeClassClass');
         },
         _resetModal: function() {
             this.$canvas.removeAttr("style");
