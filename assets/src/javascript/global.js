@@ -4,11 +4,47 @@
     
     $(document).ready( function() {
 
+      //change modal content
+      $(function() {
+        var modalOne = $("#modal-info-show").html();
+        var modalTwo = $("#modal-info-hide").html();
+        
+        $('.modal-footer__submit').on('click', function(e) {
+          $(".modal-info__content")
+          .html(modalTwo)
+          .addClass('modal-info__content-hide');
+        });
+
+        $('.modal-footer__submit-hide').on('click', function(e) {
+          console.log("modalOne");
+          $(".modal-info__content")
+          .html(modalOne)
+          .removeClassClass('modal-info__content-hide');
+        });
+
+
+      });
+
+
+      //redirect to home page
+      $(".content-bg, .header__row").on('click', function(e) {
+        if ( e.target == $(this)[0] ) {
+          var url = "index.html";
+          $(location).attr('href',url);
+        }
+      });
+
       //quick-view
       $(function() {
         if ($.fn.quickView) {
-            $('.content').quickView(); //change selector!!!
+            $('.content').quickView(); 
         }   
+      });
+
+      //show conditions
+      $('.modal-footer__link').on('click', function(e) {
+        e.preventDefault();
+        $('.modal-hide').toggleClass('is-active');
       });
 
       //stickyfill 
@@ -58,7 +94,8 @@
         $('.three-col-nav__link').on('click', function(e) {
           e.preventDefault();
           var element = $(this);
-          var href = $($(this).attr('href')); 
+          var href = $($(this).attr('href'));
+
           element
           .addClass('three-col__link--active')
           .parent()

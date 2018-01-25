@@ -10345,17 +10345,17 @@ return jQuery;
                 $productUrl = 'assets/dist/product-data/product.json'; 
 
             $.ajax( $productUrl ).done(function(response) {
-                $('.modal-info__num') 
+                $('#modal__num, .modal-img__title') 
                 .html(response.itemId);
 
-                $('.modal-info__size')
+                $('#modal__size')
                 .html('size: ' + response.itemSize);
 
-                $('.modal-info__fabric')
+                $('#modal__fabric')
                 .html('fabric: ' + response.itemFabric);
 
-                $('.modal-info__price')
-                .html('price: ' + response.itemPrice);
+                $('#modal__price')
+                .html('cena: ' + response.itemPrice + '&#8364;');
 
                 $('.modal-img__wrap')
                 .html(response.imgUrl);
@@ -10366,11 +10366,19 @@ return jQuery;
                 .join(' '));
             }.bind(this));
 
+            $("html").css("overflow-y","hidden");
+
         },
         _closeModal: function() {
             $(this.options.selectors.quickViewModal)
             .removeClass(this.options.classNames.active
             .join(' '));
+
+            $("html").css("overflow-y","");
+
+            $(".modal-info__content").html(($("#modal-info-show").html()));
+            
+            console.log('removeClassClass');
         },
         _resetModal: function() {
             this.$canvas.removeAttr("style");
@@ -12265,11 +12273,47 @@ $.magnificPopup.registerModule(RETINA_NS, {
     
     $(document).ready( function() {
 
+      //change modal content
+      $(function() {
+        var modalOne = $("#modal-info-show").html();
+        var modalTwo = $("#modal-info-hide").html();
+        
+        $('.modal-footer__submit').on('click', function(e) {
+          $(".modal-info__content")
+          .html(modalTwo)
+          .addClass('modal-info__content-hide');
+        });
+
+        $('.modal-footer__submit-hide').on('click', function(e) {
+          console.log("modalOne");
+          $(".modal-info__content")
+          .html(modalOne)
+          .removeClassClass('modal-info__content-hide');
+        });
+
+
+      });
+
+
+      //redirect to home page
+      $(".content-bg, .header__row").on('click', function(e) {
+        if ( e.target == $(this)[0] ) {
+          var url = "index.html";
+          $(location).attr('href',url);
+        }
+      });
+
       //quick-view
       $(function() {
         if ($.fn.quickView) {
-            $('.content').quickView(); //change selector!!!
+            $('.content').quickView(); 
         }   
+      });
+
+      //show conditions
+      $('.modal-footer__link').on('click', function(e) {
+        e.preventDefault();
+        $('.modal-hide').toggleClass('is-active');
       });
 
       //stickyfill 
@@ -12319,7 +12363,8 @@ $.magnificPopup.registerModule(RETINA_NS, {
         $('.three-col-nav__link').on('click', function(e) {
           e.preventDefault();
           var element = $(this);
-          var href = $($(this).attr('href')); 
+          var href = $($(this).attr('href'));
+
           element
           .addClass('three-col__link--active')
           .parent()

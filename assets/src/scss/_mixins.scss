@@ -5,12 +5,21 @@
     max-width: rem-calc(400);
   } 
   @include breakpoint(medium) {
-  	// margin: 0 rem-calc(20);
     width: 28%;
   }
   @include breakpoint(large) {
-  	margin: 0 $column-gutter; //////
+  	margin: 0 $column-gutter;
     width: 28%;
+  }
+}
+
+@mixin column-mod() {
+  width: 100%;
+  @include breakpoint(small only) {
+    max-width: rem-calc(620);
+  } 
+  @include breakpoint(medium up) {
+    width: 30%;
   }
 }
 

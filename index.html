@@ -46,19 +46,19 @@
 				<div class="three-col">
 					<div class="three-col__content">
 						<div class="three-col__img-wrap">
-							<img class="three-col__img" src="assets/dist/img/999911.jpg" alt="img">
+							<img class="three-col__img" src="assets/dist/img/999911.jpg" alt="img" data-product-id="999911">
 							<div class="three-col__img-title-wrap">
 								<h2 class="three-col__img-title">999911</h2>
 							</div>
 						</div>
 						<div class="three-col__img-wrap">
-							<img class="three-col__img" src="assets/dist/img/999903.jpg" alt="img">
+							<img class="three-col__img" src="assets/dist/img/999903.jpg" alt="img" data-product-id="999903">
 							<div class="three-col__img-title-wrap">
 								<h2 class="three-col__img-title">999903</h2>
 							</div>
 						</div>
 						<div class="three-col__img-wrap">
-							<img class="three-col__img" src="assets/dist/img/999904.jpg" alt="img">
+							<img class="three-col__img" src="assets/dist/img/999904.jpg" alt="img" data-product-id="999904">
 							<div class="three-col__img-title-wrap">
 								<h2 class="three-col__img-title">999904</h2>
 							</div>
@@ -69,19 +69,19 @@
 				<div class="three-col">
 					<div class="three-col__content">
 						<div class="three-col__img-wrap">
-							<img class="three-col__img" src="assets/dist/img/999905.jpg" alt="img">
+							<img class="three-col__img" src="assets/dist/img/999905.jpg" alt="img" data-product-id="999905">
 							<div class="three-col__img-title-wrap">
 								<h2 class="three-col__img-title">999905</h2>
 							</div>
 						</div>
 						<div class="three-col__img-wrap">
-							<img class="three-col__img" src="assets/dist/img/999906.jpg" alt="img">
+							<img class="three-col__img" src="assets/dist/img/999906.jpg" alt="img" data-product-id="999906">
 							<div class="three-col__img-title-wrap">
 								<h2 class="three-col__img-title">999906</h2>
 							</div>
 						</div>
 						<div class="three-col__img-wrap">
-							<img class="three-col__img" src="assets/dist/img/999907.jpg" alt="img">
+							<img class="three-col__img" src="assets/dist/img/999907.jpg" alt="img" data-product-id="999907">
 							<div class="three-col__img-title-wrap">
 								<h2 class="three-col__img-title">999907</h2>
 							</div>
@@ -107,31 +107,85 @@
 						<div class="modal-buy__wrap">
 							<button class="modal-buy">buy</button>
 						</div>
-						<div class="modal-info__content">
+						<div id="modal-info__content" class="modal-info__content">
 							<div class="modal-info__wrap">
-								<p class="modal-info__carre">carre:</p>
-								<p class="modal-info__num" id="modal__num"></p>
-								<p class="modal-info__size" id="modal__size"></p>
-								<p class="modal-info__fabric" id="modal__fabric"></p>
-								<p class="modal-info__price" id="modal__size"></p>
-								<form class="item_form">
+								<div class="modal-info__carre">
+									<p class="modal-info__num">carre:</p>
+									<p class="modal-info__num" id="modal__num"></p>
+								</div>
+								<p class="modal-info__size modal-info__text modal-info__text--color" id="modal__size"></p>
+								<p class="modal-info__fabric modal-info__text" id="modal__fabric"></p>
+								<p class="modal-info__price modal-info__text" id="modal__price"></p>
+								<form class="modal-form">
 									<label for="modal__email">
-										<input id="modal__email" class="item_input" type="email" placeholder="your email"></input>
+										<input id="modal__email" class="modal-form__input modal-form__item" type="email" placeholder="your email"></input>
 									</label>
-									<textarea class="modal_area" placeholder="message"></textarea>
+									<textarea class="modal-form__area modal-form__item" placeholder="message"></textarea>
 								</form>
+							</div>
+							<div class="modal-footer">
+								<a href='#' class='modal-footer__link'>...</a>
+								<button id="modal-footer__submit" class='modal-footer__submit'>confirm</button>
+							</div>
 						</div>
-						<div class="modal-info__footer">
-							<a href='#' class='modal-link'>...</a>
-							<button class='modal-submit'>confirm</button>
-						</div>
-						</div>
+
+							<div  id="modal-info-hide" class="modal-info-hide">
+								<div class="modal-info__header-hide">
+									<p class="modal-info__num-hide modal-info__num">You're done!</p>
+								</div>
+								<div class="modal-form-hide modal-form">
+									<p class="modal-info__num-hide modal-info__num">The buyer email <br>has been sent - your <br>order is avaiable</p>
+								</div>
+								<div class="modal-footer-hide">
+									<button id="modal-footer__submit-hide" class="modal-footer__submit-hide">sent another?</button>
+								</div>
+							</div>
+							<div  id="modal-info-show" class="modal-info-show">
+								<div class="modal-info__wrap">
+								<div class="modal-info__carre">
+									<p class="modal-info__num">carre:</p>
+									<p class="modal-info__num" id="modal__num"></p>
+								</div>
+								<p class="modal-info__size modal-info__text modal-info__text--color" id="modal__size"></p>
+								<p class="modal-info__fabric modal-info__text" id="modal__fabric"></p>
+								<p class="modal-info__price modal-info__text" id="modal__price"></p>
+								<form class="modal-form">
+									<label for="modal__email">
+										<input id="modal__email" class="modal-form__input modal-form__item" type="email" placeholder="your email"></input>
+									</label>
+									<textarea class="modal-form__area modal-form__item" placeholder="message"></textarea>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<a href='#' class='modal-footer__link'>...</a>
+								<button id="modal-footer__submit" class='modal-footer__submit'>confirm</button>
+							</div>
+							</div>
 					</div>
 					<!-- /.modal-info -->
 					<div class="modal-img__wrap">
 						<img class="modal-img" src="assets/dist/img/999911.jpg" alt="product">
+						<div class="modal-img__title-wrap">
+							<h2 class="modal-img__title">99000</h2>
+						</div>
 					</div> 
 					<!-- /.modal-img -->
+				</div>
+				<div class="modal-hide">
+					<div class="three-col__content three-col__content--mod">
+							<div class="three-col__col three-col__col--mod">
+								<p class="three-col__text three-col__text--pd">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque enim exercitationem voluptatum sint distinctio molestias non, doloremque fuga aspernatur tenetur repellendus debitis quia ea quasi quas suscipit amet rem aperiam minima optio. Recusandae quas minima incidunt excepturi, nesciunt beatae cumque!</p>
+								<p class="three-col__text three-col__text--pd">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque enim exercitationem voluptatum sint distinctio molestias non, doloremque fuga aspernatur tenetur repellendus debitis quia ea quasi quas suscipit amet rem aperiam minima optio. Recusandae quas minima incidunt excepturi, nesciunt beatae cumque!</p>
+							</div>
+							<div class="three-col__col three-col__col--mod">
+								<p class="three-col__text three-col__text--pd">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque enim exercitationem voluptatum sint distinctio molestias non, doloremque fuga aspernatur tenetur repellendus debitis quia ea quasi quas suscipit amet rem aperiam minima optio. Recusandae quas minima incidunt excepturi, nesciunt beatae cumque!</p>
+								<p class="three-col__text three-col__text--pd">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque enim exercitationem voluptatum sint distinctio molestias non, doloremque fuga aspernatur tenetur repellendus debitis quia ea quasi quas suscipit amet rem aperiam minima optio. Recusandae quas minima incidunt excepturi, nesciunt beatae cumque!</p>
+							</div>
+							<div class="three-col__col three-col__col--mod">
+								<p class="three-col__text three-col__text--pd">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque enim exercitationem voluptatum sint distinctio molestias non, doloremque fuga aspernatur tenetur repellendus debitis quia ea quasi quas suscipit amet rem aperiam minima optio. Recusandae quas minima incidunt excepturi, nesciunt beatae cumque!</p>
+								<p class="three-col__text three-col__text--pd">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque enim exercitationem voluptatum sint distinctio molestias non, doloremque fuga aspernatur tenetur repellendus debitis quia ea quasi quas suscipit amet rem aperiam minima optio. Recusandae quas minima incidunt excepturi, nesciunt beatae cumque!</p>
+							</div>
+						</div>
 				</div>
 			</div>
 		</div>
