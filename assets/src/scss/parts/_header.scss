@@ -16,7 +16,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: rem-calc(50);
+    height: rem-calc(60); //
+    // padding: rem-calc(10); 
     cursor: pointer;
 		@include breakpoint(medium up) {
 	    height: rem-calc(130);
@@ -28,6 +29,9 @@
 		background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    @include breakpoint(small only) {
+    	background: linear-gradient(to bottom, $dark-gray, transparent);
+  	}
 	}
 }
 
