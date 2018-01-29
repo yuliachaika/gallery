@@ -12226,53 +12226,6 @@ $.magnificPopup.registerModule(RETINA_NS, {
     
     $(document).ready( function() {
 
-//////
-// // var hBlock = document.getElementById('testH').clientHeight;
-// var hBlock = $('.three-col__col').height();
-// var hBrowser = $('body').height();
-// var topX = hBlock - hBrowser;
-
-// $(window).scroll(function (){
-//   var scrolled = $(window).scrollTop() || $(document).scrollTop();
-//   $('.three-col__col').each(function() {
-//     // if(hBrowser >= hBlock){
-//     // this.style = 'position:fixed; right:0;';
-//    // }else if(scrolled >= topX){
-//    if(scrolled >= topX){
-//    this.style = 'position:fixed;bottom:0';
-//    }else{
-//    this.style = '';
-//    }
-//   });
-// });
-
-
-
-
-// var hBrowser = document.body.clientHeight;
-// var topX = hBlock - hBrowser;
-// window.onscroll = function() {
-//   var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-//   if(hBrowser >= hBlock){
-//     document.getElementById('testH').style = 'position:fixed; right:0;';
-//  }else if(scrolled >= topX){
-//  document.getElementById('testH').style = 'position:fixed;right:0;bottom:0';
-//  }else{
-//  document.getElementById('testH').style = '';
-//  }
-// }
-
-
-
-
-
-
-//////
-
-
-
-
-
 
       $("#filter").keyup(function(){
  
@@ -12290,7 +12243,6 @@ $.magnificPopup.registerModule(RETINA_NS, {
 
       });
 
-///////////////////
 
       //change modal content
       $(function() {
