@@ -2,7 +2,74 @@
 ;
 (function($){
     
+    
     $(document).ready( function() {
+
+//////
+// // var hBlock = document.getElementById('testH').clientHeight;
+// var hBlock = $('.three-col__col').height();
+// var hBrowser = $('body').height();
+// var topX = hBlock - hBrowser;
+
+// $(window).scroll(function (){
+//   var scrolled = $(window).scrollTop() || $(document).scrollTop();
+//   $('.three-col__col').each(function() {
+//     // if(hBrowser >= hBlock){
+//     // this.style = 'position:fixed; right:0;';
+//    // }else if(scrolled >= topX){
+//    if(scrolled >= topX){
+//    this.style = 'position:fixed;bottom:0';
+//    }else{
+//    this.style = '';
+//    }
+//   });
+// });
+
+
+
+
+// var hBrowser = document.body.clientHeight;
+// var topX = hBlock - hBrowser;
+// window.onscroll = function() {
+//   var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+//   if(hBrowser >= hBlock){
+//     document.getElementById('testH').style = 'position:fixed; right:0;';
+//  }else if(scrolled >= topX){
+//  document.getElementById('testH').style = 'position:fixed;right:0;bottom:0';
+//  }else{
+//  document.getElementById('testH').style = '';
+//  }
+// }
+
+
+
+
+
+
+//////
+
+
+
+
+
+
+      $("#filter").keyup(function(){
+ 
+        var filter = $(this).val();
+ 
+        $(".three-col__img-wrap img").each(function(){
+ 
+            if ($(this).attr('data-product-id').search(new RegExp(filter, "i")) < 0) {
+                $(this).parent().fadeOut();
+
+            } else {
+                $(this).parent().show();
+            }
+        });
+
+      });
+
+///////////////////
 
       //change modal content
       $(function() {
@@ -27,7 +94,7 @@
 
 
       //redirect to home page
-      $(".content-bg, .header__row").on('click', function(e) {
+      $(".content-bg").on('click', function(e) { //.header__row
         if ( e.target == $(this)[0] ) {
           var url = "index.html";
           $(location).attr('href',url);
